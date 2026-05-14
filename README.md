@@ -82,9 +82,9 @@ wealth_hub/
     └── src/
         ├── api/client.js           # +team/documents/promotion методы
         ├── pages/
-        │   ├── ProjectEditPage.jsx       (НОВАЯ — Фаза 2)
-        │   ├── AdminPage.jsx             (расширена в Фазе 2)
-        │   └── …                         (остальные 14 страниц)
+        │   ├── ProjectEditPage.jsx # Основные страницы      
+        │   ├── AdminPage.jsx             
+        │   └── …                         
         └── …
 ```
 
