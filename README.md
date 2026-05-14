@@ -26,52 +26,9 @@
 
 Покрывают рекомендательную подсистему (`core/recommender.py`), её HTTP-эндпоинт `/api/projects/<id>/recommendation/` и smoke-проверку эталонного демо-проекта **«InvestFlow PRO»**, который должен после `seed_data` существовать на модерации, оцениваться системой как `medium risk` и быть `high attractiveness` для `demo_investor`.
 
-### Быстрый запуск
-
-```bash
-cd backend
-.venv\Scripts\activate              # Windows
-# source .venv/bin/activate         # Linux / macOS
-
-# Все 39 тестов
-python manage.py test core.tests
-
-# С детальным выводом по каждому тесту
-python manage.py test core.tests -v 2
-
-# Только один модуль
-python manage.py test core.tests.test_recommender
-python manage.py test core.tests.test_recommendation_api
-python manage.py test core.tests.test_seed_demo_project
-
-# Параллельный запуск (быстрее на многоядерных машинах)
-python manage.py test core.tests --parallel 4
-```
-
-Ожидаемый результат:
-```
-Ran 39 tests in ~17s
-OK
-```
-
 ### Покрытие кода (coverage)
 
 Установлено в `requirements.txt`, конфиг — в `backend/.coveragerc`. Миграции, тесты и settings из подсчёта исключены.
-
-```bash
-# 1. Прогон с инструментацией
-python -m coverage run --rcfile=.coveragerc manage.py test core.tests
-
-# 2. Текстовая статистика в терминале
-python -m coverage report --rcfile=.coveragerc
-
-# 3. HTML-отчёт (даёт удобный браузер для drill-down по строкам)
-python -m coverage html --rcfile=.coveragerc
-# → откроется в backend/htmlcov/index.html
-
-# 4. Сброс накопленной статистики
-python -m coverage erase
-```
 
 Пример текущего отчёта (`coverage report`):
 
