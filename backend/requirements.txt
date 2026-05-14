@@ -1,0 +1,18 @@
+# Wealth Hub — Backend dependencies
+# Совместимо с Python 3.11–3.14
+
+Django==5.1.4
+djangorestframework==3.15.2
+djangorestframework-simplejwt==5.3.1
+django-cors-headers==4.6.0
+django-filter==24.3
+Pillow>=11.1.0           # 11.1+ имеет prebuilt wheels для Python 3.14
+python-dotenv==1.0.1
+requests==2.32.3
+
+# MySQL не нужен — используем SQLite. Если понадобится:
+# mysqlclient==2.2.6  # требует Visual Studio Build Tools + MySQL headers на Windows
+# или PyMySQL==1.1.1  # чистый Python, см. README
+
+# Для разработки и автотестов (опционально)
+coverage==7.6.10

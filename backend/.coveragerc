@@ -1,0 +1,28 @@
+[run]
+source = core
+branch = True
+omit =
+    */migrations/*
+    */tests/*
+    */management/*
+    */__init__.py
+    manage.py
+    wealth_hub_backend/*
+
+[report]
+# Исключаем строки, которые не имеет смысла покрывать тестами
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    def __str__
+    raise NotImplementedError
+    if __name__ == .__main__.:
+    if TYPE_CHECKING:
+    pass
+show_missing = True
+skip_covered = False
+precision = 1
+
+[html]
+directory = htmlcov
+title = Wealth Hub — Coverage Report
